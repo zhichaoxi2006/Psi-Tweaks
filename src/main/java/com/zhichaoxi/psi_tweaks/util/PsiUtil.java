@@ -9,7 +9,6 @@ import vazkii.psi.api.cad.ICAD;
 import vazkii.psi.common.core.handler.PlayerDataHandler;
 
 public class PsiUtil {
-    private static final int magic_number = 42;
 
     public static int getRealAvailablePsi(Player player) {
         int availablePsi = 0;
@@ -28,11 +27,16 @@ public class PsiUtil {
     public static int getAdditionalAvailablePsi(Player player) {
         int amount = 0;
 
+        IAdditionalPsiHandler psiHandlerEntity = player.getCapability(ModCapabilities.ADDITIONAL_PSI_HANDLER_ENTITY);
+        if (psiHandlerEntity != null) {
+            amount += psiHandlerEntity.getPsiStored();
+        }
+
         //TODO 兼容其他的槽位
         for (ItemStack item : player.getInventory().items) {
-            IAdditionalPsiHandler psiHandler = item.getCapability(ModCapabilities.ADDITIONAL_PSI_HANDLER_ITEM);
-            if (psiHandler != null) {
-                amount += psiHandler.getPsiStored();
+            IAdditionalPsiHandler psiHandlerItem = item.getCapability(ModCapabilities.ADDITIONAL_PSI_HANDLER_ITEM);
+            if (psiHandlerItem != null) {
+                amount += psiHandlerItem.getPsiStored();
             }
         }
 
@@ -42,6 +46,11 @@ public class PsiUtil {
 
     public static int costAdditionalAvailablePsi(Player player, int cost) {
         int amount = 0;
+
+        IAdditionalPsiHandler psiHandlerEntity = player.getCapability(ModCapabilities.ADDITIONAL_PSI_HANDLER_ENTITY);
+        if (psiHandlerEntity != null) {
+            amount += psiHandlerEntity.getPsiStored();
+        }
 
         //TODO 兼容其他的槽位
         for (ItemStack item : player.getInventory().items) {
