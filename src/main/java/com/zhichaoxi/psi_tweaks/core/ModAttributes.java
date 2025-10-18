@@ -23,13 +23,13 @@ public class ModAttributes {
 
     static {
         MAX_PSI = DR.register(LibAttributeNames.MAX_PSI, () -> new RangedAttribute(
-                "attributes.psi_oddities.max_psi",
+                "attributes.psi_tweaks.max_psi",
                 0,
                 -1000000,
                 1000000
         ).setSyncable(true));
         REGEN_PSI = DR.register(LibAttributeNames.REGEN_PSI, () -> new RangedAttribute(
-                "attributes.psi_oddities.regen_psi",
+                "attributes.psi_tweaks.regen_psi",
                 0,
                 -1000000,
                 1000000
