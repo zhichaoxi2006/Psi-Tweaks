@@ -51,7 +51,7 @@ public class PsiUtil {
 
         IAdditionalPsiHandler psiHandlerEntity = player.getCapability(ModCapabilities.ADDITIONAL_PSI_HANDLER_ENTITY);
         if (psiHandlerEntity != null) {
-            amount += psiHandlerEntity.getPsiStored();
+            amount += psiHandlerEntity.extractPsi(cost, false);
         }
 
         //TODO 兼容其他的槽位
