@@ -20,16 +20,15 @@ public class ConfigHandler {
 
         public Common(ModConfigSpec.Builder builder) {
             bossImmuneSpell = builder
-                    .comment(" Do Boss immune Psi Spell.")
+                    .comment("Determines whether the boss is immune to Psi spells.")
                     .define("common.bossImmuneSpell", false);
 
             maxCastRadius = builder
-                    .comment(" Set max cast radius of spell.")
+                    .comment("Set the maximum casting radius for the spell.")
                     .defineInRange("common.maxCastRadius", -1, -1, Double.MAX_VALUE);
 
             alwaysValidForRegen = builder
-                    .comment(" Do Always valid for regen of Psimetal Tool." +
-                            "(true is mean it is valid for regen of Psimetal Tool on your mainhand or offhand)")
+                    .comment("Always active for Psi Metal Tool regeneration. (true indicates this effect applies to Psi Metal Tool regeneration for your main or off-hand equipped tool)")
                     .define("common.alwaysValidForRegen", true);
         }
     }
