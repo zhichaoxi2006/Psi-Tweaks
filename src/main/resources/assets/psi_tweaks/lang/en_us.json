@@ -1,5 +1,4 @@
 {
-  "itemGroup.psi_tweaks": "Example Mod Tab",
-  "block.psi_tweaks.example_block": "Example Block",
-  "item.psi_tweaks.example_item": "Example Item"
+  "attributes.psi_tweaks.max_psi": "Max Psi",
+  "attributes.psi_tweaks.regen_psi": "Psi Regen Speed"
 }
