@@ -28,7 +28,8 @@ public class ConfigHandler {
                     .defineInRange("common.maxCastRadius", -1, -1, Double.MAX_VALUE);
 
             alwaysValidForRegen = builder
-                    .comment(" Do Always valid for regen of Psimetal Tool.(true is mean it is valid for regen of Psimetal Tool on your mainhand or offhand)")
+                    .comment(" Do Always valid for regen of Psimetal Tool." +
+                            "(true is mean it is valid for regen of Psimetal Tool on your mainhand or offhand)")
                     .define("common.alwaysValidForRegen", true);
         }
     }

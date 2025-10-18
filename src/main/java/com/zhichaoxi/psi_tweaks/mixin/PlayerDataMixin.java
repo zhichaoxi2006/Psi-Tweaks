@@ -4,6 +4,7 @@ import com.zhichaoxi.psi_tweaks.core.ModAttributes;
 import com.zhichaoxi.psi_tweaks.util.PsiUtil;
 import jdk.jfr.Name;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

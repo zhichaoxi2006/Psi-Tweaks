@@ -15,12 +15,14 @@ public class PsiUtil {
         ItemStack cad = PsiAPI.getPlayerCAD(player);
         ICAD cadItem = (ICAD) cad.getItem();
         PlayerDataHandler.PlayerData data = PlayerDataHandler.get(player);
-        //Debug
+
+        //Psi Tweaks
         availablePsi += getAdditionalAvailablePsi(player);
 
         //Psi
         availablePsi += data.getAvailablePsi();
         availablePsi += cadItem.getStoredPsi(cad);
+
         return availablePsi;
     }
 
